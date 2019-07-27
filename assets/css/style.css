@@ -2,6 +2,11 @@
     background-image: url("https://miro.medium.com/max/3598/1*eDX433yMoIIiXq8UXSEdhg.jpeg");
     background-position: 0% 42%;
     color: white;
+    margin-top: 20px;
+}
+#title {
+    font-family: 'Lobster', cursive;
+    font-size: 80px;
 }
 #searchBtn {
     border-color: white;
