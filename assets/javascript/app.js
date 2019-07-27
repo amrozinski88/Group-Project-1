@@ -18,8 +18,8 @@ var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codin
       var trackerCount = $("<p>").text(response.tracker_count + " fans tracking this artist");
       var upcomingEvents = $("<p>").text(response.upcoming_event_count + " upcoming events");
 
-      $("#artist-info").empty();
-      $("#artist-info").append(artistURL, artistImage, trackerCount, upcomingEvents);
+      $(".artistInfo").empty();
+      $(".artistInfo").append(artistURL, artistImage, trackerCount, upcomingEvents);
     });
   }
   // button
