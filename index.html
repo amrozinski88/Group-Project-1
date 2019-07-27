@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sound Around</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,7 +25,7 @@
     <div class="container">
         <!-- the header and search bar -->
         <div class="jumbotron jumbotron-fluid rounded">
-            <h1 class="display-4 text-center">Sound Around</h1>
+            <h1 class="display-4 text-center" id="title">Sound Around</h1>
             <p class="lead text-center">Find where your favorite artists are playing in your area!</p>
             <form class="form-inline justify-content-center" id="searchBar">
                 <!--search bar-->
@@ -55,7 +56,6 @@
             <div class="col-6">
                 <!-- this is the box on the right, think of using it for the google map/venue info -->
                 <div class="card">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
                     <div class="card-body">
                         <h5 class="card-title">Venue Information</h5>
                         <div class="venueInfo"></div>
@@ -72,7 +72,7 @@
         </div>
         <div class="row">
             <div class="col-12" id="bottomCard">
-                <!-- this will be the bottom box -->
+                <!-- this is the bottom box used for ?-->
                 <div class="card">
                     <div class="card-body">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt blandit pharetra.
@@ -83,11 +83,8 @@
     </div> <!-- end of container -->
 
     <!-- Footer -->
-    <div class="row">
-        <div class="footer text-center">
-            <footer>Copyright ©</footer>
-        </div>
-    </div>
+    <div class="footer text-center">
+        <footer>Copyright ©</footer>
     </div>
 </body>
 
