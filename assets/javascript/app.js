@@ -1,30 +1,36 @@
+$(document).ready(function(){
+
+
+console.log("we good")
 function searchBandsInTown(artist) {
-    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
-   // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
-   $.ajax({
+console.log(artist)
+var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
+    $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
 
-        console.log(response);
-       var artistName = $("<h1>").text(response.name);
-       var artistUrl = $("<a>").attr("href", response.url).append(artistName);
-       var artistImage = $("<img>").attr("src", response.thumb_url);
-       var trackerCount = $("<h2>").text(response.tracker_count + "fans tracking this artist!");
-       var upcomingEvents = $("<a>").attr("href", response.upcoming_event_count + "upcoming events");
-       
+      console.log(response);
 
+      var artistName = $("<p>").text(response.name);
+      var artistURL = $("<a>").attr("href", response.url).append(artistName);
+      var artistImage = $("<img>").attr("src", response.thumb_url);
+      var trackerCount = $("<p>").text(response.tracker_count + " fans tracking this artist");
+      var upcomingEvents = $("<p>").text(response.upcoming_event_count + " upcoming events");
+
+      $("#artist-info").empty();
+      $("#artist-info").append(artistURL, artistImage, trackerCount, upcomingEvents);
     });
-    
-    
-      };
+  }
+  // button
+  $("#searchBtn").on("click", function(event) {
+    console.log("click")
+    // Preventing the button from trying to submit the form
+    event.preventDefault();
+    // textbox
+    var inputArtist = $("#search").val().trim();
 
-      $("#select-artist").on("click", function(event) {
-        // Preventing the button from trying to submit the form
-        event.preventDefault();
-        // Storing the artist name
-        var inputArtist = $("#artist-input").val().trim();
-    
-        // Running the searchBandsInTown function(passing in the artist as an argument)
-        searchBandsInTown(inputArtist);
-      })
+    // Running the searchBandsInTown function(passing in the artist as an argument)
+    searchBandsInTown(inputArtist);
+  });
+}) 

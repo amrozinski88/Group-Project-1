@@ -1,0 +1,19 @@
+.jumbotron {
+    background-image: url("https://miro.medium.com/max/3598/1*eDX433yMoIIiXq8UXSEdhg.jpeg");
+    background-position: 0% 42%;
+    color: white;
+}
+#searchBtn {
+    border-color: white;
+    color: white;
+}
+#bottomCard {
+    margin-top: 20px;
+}
+.footer {
+    height: 50px;
+    margin-top: 20px;
+    padding-top: 10px;
+    background-color: #c4c2c27c;
+    width: 100%;
+}
