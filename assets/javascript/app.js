@@ -17,7 +17,7 @@ var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_
       var artistImage = $("<img>").attr("src", response.thumb_url);
       var trackerCount = $("<p>").text(response.tracker_count + " fans tracking this artist");
       var upcomingEvents = $("<p>").text(response.upcoming_event_count + " upcoming events");
-      console.log(response.["7"]);
+      console.log(response["7"].response["0"].offers);
       $(".artistInfo").empty();
       $(".artistInfo").append(artistURL, artistImage, trackerCount, upcomingEvents);
     });
