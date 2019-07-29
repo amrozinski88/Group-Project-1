@@ -11,48 +11,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    
 </head>
-
 <body>
+
+
     <div class="container">
         <!-- the header and search bar -->
         <div class="jumbotron jumbotron-fluid rounded">
             <h1 class="display-4 text-center" id="title">Sound Around</h1>
             <p class="lead text-center">Find where your favorite artists are playing in your area!</p>
             <form class="form-inline justify-content-center" id="searchBar">
+                <!--search bar-->
                 <input class="form-control mr-sm-2" id="search" type="search" placeholder="search an artist"
                     aria-label="Search">
+                  <!-----search button---------->
                 <button class="btn btn-outline my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
+
             </form>
         </div>
         <div class="row">
             <!-- this is the box on the left, thinking of using it for the artists info? -->
             <div class="col-6">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="https://k10mpp7ju8lz8v89-zippykid.netdna-ssl.com/wp-content/uploads/2018/03/Andy-with-Oud.jpg"
-                                class="card-img" alt="artist/band placeholder">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Artist Information</h5>
-                                <div class="artistInfo"></div>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                    tincidunt
-                                    blandit pharetra. Sed maximus neque eu libero convallis, sit amet semper ligula
-                                    ornare.
-                                    Nulla faucibus elit non ligula tempor, sit amet varius elit porttitor. Nullam
-                                    consequat
-                                    interdum facilisis. Curabitur nec scelerisque ante. Sed non enim arcu. Vestibulum
-                                    blandit
-                                    non ante in pharetra. Nulla quis scelerisque nunc. Morbi elementum ex id erat
-                                    tristique
-                                    vulputate. Aliquam maximus justo sit amet tellus porta malesuada. Praesent sit amet
-                                    dolor id
-                                    nunc venenatis facilisis. Fusce quis porttitor turpis, vel porttitor magna.</p>
-                            </div>
-                        </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Artist Information</h5>
+                        <div class="artistInfo"></div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt
+                            blandit pharetra. Sed maximus neque eu libero convallis, sit amet semper ligula ornare.
+                            Nulla faucibus elit non ligula tempor, sit amet varius elit porttitor. Nullam consequat
+                            interdum facilisis. Curabitur nec scelerisque ante. Sed non enim arcu. Vestibulum blandit
+                            non ante in pharetra. Nulla quis scelerisque nunc. Morbi elementum ex id erat tristique
+                            vulputate. Aliquam maximus img src="..." class="card-img-top" alt="artist/band placeholder" width="100%" height="250px"> justo sit amet tellus porta malesuada. Praesent sit amet dolor id
+                            nunc venenatis facilisis. Fusce quis porttitor turpis, vel porttitor magna.</p>
                     </div>
                 </div>
             </div>

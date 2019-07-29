@@ -1,4 +1,8 @@
 
+$(document).ready(function(){
+
+
+console.log("we good")
 // Function used to get video and append to videoSection div on search
 function getVideo(query) {
   var queryURL = "https://www.googleapis.com/youtube/v3/search?part=id&maxResults=1&q=" + query + "&type=video&key=AIzaSyCzq7GrG1jBxY4R6yJF828EGxv8uHZVTnc";
@@ -21,13 +25,38 @@ function getVideo(query) {
     $("#videoSection").html(videoIframe);
   })
 }
-// Click event for search button that runs function created uptop
-$("#searchBtn").on("click", function (event) {
-  event.preventDefault();
-  var temp = $("#search").val().trim()
-  getVideo(temp);
-})
 
 
+function searchBandsInTown(artist) {
+console.log(artist)
+var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
 
+      console.log(response);
 
+      var artistName = $("<p>").text(response.name);
+      var artistURL = $("<a>").attr("href", response.url).append(artistName);
+      var artistImage = $("<img>").attr("src", response.thumb_url);
+      var trackerCount = $("<p>").text(response.tracker_count + " fans tracking this artist");
+      var upcomingEvents = $("<p>").text(response.upcoming_event_count + " upcoming events");
+
+      $(".artistInfo").empty();
+      $(".artistInfo").append(artistURL, artistImage, trackerCount, upcomingEvents);
+    });
+  }
+  // button
+  $("#searchBtn").on("click", function(event) {
+    console.log("click")
+    // Preventing the button from trying to submit the form
+    event.preventDefault();
+    // textbox
+    var inputArtist = $("#search").val().trim();
+    getVideo(inputArtist);
+    // Running the searchBandsInTown function(passing in the artist as an argument)
+    searchBandsInTown(inputArtist);
+
+  });
+}) 
