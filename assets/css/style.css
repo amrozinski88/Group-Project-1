@@ -12,8 +12,12 @@
     border-color: white;
     color: white;
 }
-#bottomCard {
+#bottomBox {
     margin-top: 20px;
+}
+#bottomCard{
+    width: 560px;
+    height: 320px;
 }
 .footer {
     height: 50px;
