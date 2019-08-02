@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
 
@@ -46,7 +45,27 @@ $(document).ready(function () {
       $(".artistInfo").empty();
       $(".artistInfo").append(artistURL, artistImage, trackerCount, upcomingEvents);
     });
-  }
+     
+    queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      for (let i = 0; i < response.length; i++) {
+     console.log(response[i]);
+     
+     var venueInfo = $("<p>").text(response[i].venue.name);
+     var dateTime = $("<p>").text(response[i].datetime);
+     var longitude = (response[i].venue.longitude);
+     var latitude = (response[i].venue.latitude);
+     $(".venueInfo").empty();
+     $(".venueInfo").append(venueInfo, dateTime);
+     $(".venueInfo").attr("latValue", latitude);
+     $(".venueInfo").attr("longValue", longitude);
+    
+    }
+    
+  });}
   // button
   $("#searchBtn").on("click", function (event) {
     console.log("click")
@@ -61,4 +80,4 @@ $(document).ready(function () {
     searchBandsInTown(inputArtist);
 
   });
-}) 
+  })
