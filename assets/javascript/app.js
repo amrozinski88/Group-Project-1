@@ -34,7 +34,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
 
-      console.log(response);
+      // console.log(response);
 
       var artistName = $("<p>").text(response.name);
       var artistURL = $("<a>").attr("href", response.url).append(artistName);
@@ -52,7 +52,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       for (let i = 0; i < response.length; i++) {
-     console.log(response[i]);
+    //  console.log(response[i]);
      
      var venueInfo = $("<p>").text(response[i].venue.name);
      var dateTime = $("<p>").text(response[i].datetime);
@@ -65,19 +65,57 @@ $(document).ready(function () {
     
     }
     
-  });}
-  // button
-  $("#searchBtn").on("click", function (event) {
-    console.log("click")
-    // empty place holders
-    $(".card-text").empty();
-    // Preventing the button from trying to submit the form
-    event.preventDefault();
-    // textbox
-    var inputArtist = $("#search").val().trim();
-    getVideo(inputArtist);
-    // Running the searchBandsInTown function(passing in the artist as an argument)
-    searchBandsInTown(inputArtist);
+    });
+  }
+    //map
 
-  });
+
+
+    function gMap(latiMap, longMap) {
+      var latiMap = $("latValue").val();
+      var longMap = $("longValue").val();
+  
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: latiMap, lng: longMap },
+        zoom: 8
+      });
+    }
+  
+  
+    // button
+    $("#searchBtn").on("click", function (event) {
+      console.log("click")
+      // empty place holders
+      $(".card-text").empty();
+      // Preventing the button from trying to submit the form
+      event.preventDefault();
+      // textbox
+      var inputArtist = $("#search").val().trim();
+      getVideo(inputArtist);
+      // Running the searchBandsInTown function(passing in the artist as an argument)
+      searchBandsInTown(inputArtist);
+      
+  
+      gMap();
+  
+    });
+  
+  
+  
+    // randomize on load
+  
+    var startArtistArray = ["the growlers", "inner wave", "portugal the man", "salem", "mystic braves", "teamsesh", "weezer"];
+  
+    randoArtist = Math.floor(Math.random() * startArtistArray.length);
+    startArtist = startArtistArray[randoArtist];
+  
+    searchBandsInTown(startArtist);
+    getVideo(startArtist);
+    gMap();
+  
+    
+  
+  
+  
   })
+  
