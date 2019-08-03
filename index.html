@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
 </head>
+
 <body>
     <div class="container">
         <!-- the header and search bar -->
@@ -23,7 +24,7 @@
                 <!--search bar-->
                 <input class="form-control mr-sm-2" id="search" type="search" placeholder="search an artist"
                     aria-label="Search">
-                  <!-----search button---------->
+                <!-----search button---------->
                 <button class="btn btn-outline my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
 
             </form>
@@ -44,20 +45,22 @@
                     <div class="card-body">
                         <h5 class="card-title">Venue Information</h5>
                         <div class="venueInfo"></div>
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- video -->
-            <div class="row">
+        <div class="row">
             <div class="col-6" id="bottomBox">
-                        <div id="videoSection">
-                            <iframe width="560" height="315" src="" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                    </div>
+                <div id="videoSection">
+                    <iframe width="560" height="315" src="" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
             </div>
         </div>
+    </div>
     </div> <!-- end of container -->
 
     <!-- Footer -->
@@ -72,6 +75,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzbSr_zlaIWkFaQFEU0LUibUqRrAP4fwg&callback=gMap"
+        async defer></script>
     <script src="assets/javascript/app.js"></script>
 
 
