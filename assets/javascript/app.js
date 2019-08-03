@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+var myVar;
 
   console.log("we good")
   // Function used to get video and append to videoSection div on search
@@ -24,8 +24,6 @@ $(document).ready(function () {
       $("#videoSection").html(videoIframe);
     })
   }
-
-
   function searchBandsInTown(artist) {
     console.log(artist)
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";

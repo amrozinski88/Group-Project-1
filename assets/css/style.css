@@ -1,8 +1,14 @@
+.container {
+    background-color: rgba(180, 180, 180, 0.438);
+    padding-top: .12rem;
+    border-radius: 5px;
+}
 .jumbotron {
     background-image: url("https://miro.medium.com/max/3598/1*eDX433yMoIIiXq8UXSEdhg.jpeg");
     background-position: 0% 42%;
     color: white;
     margin-top: 20px;
+    
 }
 #title {
     font-family: 'Lobster', cursive;
@@ -25,7 +31,11 @@
     padding-top: 10px;
     background-color: #c4c2c27c;
     width: 100%;
+    border-top: solid darkgrey 2px;
 }
+
+  
+ 
 
 #map{
     height: 300px;
