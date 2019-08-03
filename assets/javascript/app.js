@@ -1,5 +1,16 @@
 
+var myVar;
+  
+function myFunction() {
+  myVar = setTimeout(showPage, 2000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
 $(document).ready(function () {
+
 
 
   console.log("we good")
@@ -25,8 +36,6 @@ $(document).ready(function () {
       $("#videoSection").html(videoIframe);
     })
   }
-
-
   function searchBandsInTown(artist) {
     console.log(artist)
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";

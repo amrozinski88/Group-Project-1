@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
 </head>
-<body>
+
+<body onload="myFunction()" style="margin:0;">
     <div class="container">
         <!-- the header and search bar -->
         <div class="jumbotron jumbotron-fluid rounded">
@@ -21,43 +22,49 @@
             <p class="lead text-center">Find where your favorite artists are playing in your area!</p>
             <form class="form-inline justify-content-center" id="searchBar">
                 <!--search bar-->
-                <input class="form-control mr-sm-2" id="search" type="search" placeholder="search an artist"
+                <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search an artist"
                     aria-label="Search">
-                  <!-----search button---------->
+                <!-----search button---------->
                 <button class="btn btn-outline my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
 
             </form>
         </div>
-        <div class="row">
-            <!-- this is the box on the left, thinking of using it for the artists info? -->
-            <div class="col-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Artist Information</h5>
-                        <div class="artistInfo"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <!-- This is the box on the right, think of using it for the google map/venue info -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Venue Information</h5>
-                        <div class="venueInfo"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- video -->
+        <div id="loader"></div>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
             <div class="row">
-            <div class="col-6" id="bottomBox">
-                        <div id="videoSection">
-                            <iframe width="560" height="315" src="" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
+                <!-- this is the box on the left, thinking of using it for the artists info? -->
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Artist Information</h5>
+                            <hr>
+                            <div class="artistInfo"></div>
+                        </div>
                     </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <!-- This is the box on the right, think of using it for the google map/venue info -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Venue Information</h5>
+                            <hr>
+                            <div class="venueInfo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- video -->
+            <div class="row">
+                <div class="col-6" id="bottomBox">
+                    <div id="videoSection">
+                        <iframe width="560" height="315" src="" frameborder="0">
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
     </div> <!-- end of container -->
 
     <!-- Footer -->
