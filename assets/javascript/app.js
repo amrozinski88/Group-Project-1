@@ -74,7 +74,7 @@ var myVar;
       var longMap = $("longValue").val();
   
       var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: latiMap, lng: longMap },
+        center: { lat: 28.586524299999997, lng: -81.19678499999999 },
         zoom: 8
       });
     }
@@ -92,8 +92,6 @@ var myVar;
       getVideo(inputArtist);
       // Running the searchBandsInTown function(passing in the artist as an argument)
       searchBandsInTown(inputArtist);
-      
-  
       gMap();
   
     });
